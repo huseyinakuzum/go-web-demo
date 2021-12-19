@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/labstack/echo/v4"
 	echoSwagger "github.com/swaggo/echo-swagger"
+	_ "go-web-demo/docs"
 	"net/http"
 	"os"
 	"os/signal"

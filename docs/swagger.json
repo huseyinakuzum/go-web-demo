@@ -15,7 +15,12 @@
                 "tags": [
                     "controller"
                 ],
-                "summary": "create review"
+                "summary": "create review",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
             }
         },
         "/reviews/id/{reviewId}": {
@@ -33,7 +38,7 @@
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "Review Id",
+                        "description": "ReviewId",
                         "name": "reviewId",
                         "in": "path",
                         "required": true
@@ -64,7 +69,7 @@
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "Review Id",
+                        "description": "Rate",
                         "name": "rate",
                         "in": "path",
                         "required": true

@@ -10,7 +10,7 @@ func NewCouchbaseClient(couchbaseConfig CouchbaseConfig) *couchbase.Cluster {
 	cbClient, err := couchbase.Connect(
 		couchbaseConfig.Addresses,
 		couchbase.ClusterOptions{
-			Username: couchbaseConfig.Bucket,
+			Username: couchbaseConfig.Username,
 			Password: couchbaseConfig.Password,
 		})
 	if err != nil {

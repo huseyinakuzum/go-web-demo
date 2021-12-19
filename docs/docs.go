@@ -34,7 +34,12 @@ var doc = `{
                 "tags": [
                     "controller"
                 ],
-                "summary": "create review"
+                "summary": "create review",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
             }
         },
         "/reviews/id/{reviewId}": {
@@ -52,7 +57,7 @@ var doc = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "Review Id",
+                        "description": "ReviewId",
                         "name": "reviewId",
                         "in": "path",
                         "required": true
@@ -83,7 +88,7 @@ var doc = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "Review Id",
+                        "description": "Rate",
                         "name": "rate",
                         "in": "path",
                         "required": true

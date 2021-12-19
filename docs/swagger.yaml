@@ -23,10 +23,10 @@ paths:
       - application/json
       produces:
       - application/json
-      summary: create review
       responses:
         "200":
-          description: OK
+          description: ""
+      summary: create review
       tags:
       - controller
   /reviews/id/{reviewId}:
@@ -34,7 +34,7 @@ paths:
       consumes:
       - application/json
       parameters:
-      - description: Review Id
+      - description: ReviewId
         in: path
         name: reviewId
         required: true
@@ -54,7 +54,7 @@ paths:
       consumes:
       - application/json
       parameters:
-      - description: Review Id
+      - description: Rate
         in: path
         name: rate
         required: true
