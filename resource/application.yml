@@ -1,0 +1,19 @@
+local:
+  server:
+    port: "8080"
+  couchbase:
+    addresses: "localhost:8091"
+    bucket: "reviews"
+    username: "reviews"
+    password: "123qwe"
+
+kube:
+  server:
+    port: "8080"
+  couchbase:
+    addresses: "host.docker.internal:8091"
+    bucket: "reviews"
+    username: "reviews"
+    password: "123qwe"
+
+

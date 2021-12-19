@@ -1,0 +1,112 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/reviews": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "controller"
+                ],
+                "summary": "create review"
+            }
+        },
+        "/reviews/id/{reviewId}": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "controller"
+                ],
+                "summary": "get review by id",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Review Id",
+                        "name": "reviewId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/main.ReviewDTO"
+                        }
+                    }
+                }
+            }
+        },
+        "/reviews/rate/{rate}": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "controller"
+                ],
+                "summary": "get reviews by rate",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Review Id",
+                        "name": "rate",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/main.ReviewDTO"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.ReviewDTO": {
+            "type": "object",
+            "properties": {
+                "comment": {
+                    "type": "string"
+                },
+                "contentId": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "rate": {
+                    "type": "integer"
+                },
+                "userId": {
+                    "type": "integer"
+                },
+                "userName": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

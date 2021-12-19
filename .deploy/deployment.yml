@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-demo
+  template:
+    metadata:
+      labels:
+        app: go-demo
+    spec:
+      containers:
+        - name: go-demo
+          image: shaquzum/go-demo:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ACTIVE_PROFILE
+              value: "kube"
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "800Mi"
+              cpu: "800m"
+            requests:
+              memory: "400Mi"
+              cpu: "400m"

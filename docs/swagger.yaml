@@ -1,0 +1,74 @@
+definitions:
+  main.ReviewDTO:
+    properties:
+      comment:
+        type: string
+      contentId:
+        type: string
+      id:
+        type: string
+      rate:
+        type: integer
+      userId:
+        type: integer
+      userName:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /reviews:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      summary: create review
+      responses:
+        "200":
+          description: OK
+      tags:
+      - controller
+  /reviews/id/{reviewId}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Review Id
+        in: path
+        name: reviewId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.ReviewDTO'
+      summary: get review by id
+      tags:
+      - controller
+  /reviews/rate/{rate}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: Review Id
+        in: path
+        name: rate
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/main.ReviewDTO'
+            type: array
+      summary: get reviews by rate
+      tags:
+      - controller
+swagger: "2.0"
